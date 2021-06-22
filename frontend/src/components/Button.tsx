@@ -1,9 +1,11 @@
-interface IButtonProps {
-  text?: string;
-}
+import { ButtonHTMLAttributes } from "react";
 
-export function Button(props: IButtonProps) {
+import '../styles/button.scss';
+
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+
+export function Button(props: ButtonProps) {
   return (
-    <button>{props.text || 'default'}</button>
+    <button className="button" {...props} />
   );
 }
